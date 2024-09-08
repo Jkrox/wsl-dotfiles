@@ -7,3 +7,5 @@
 [user]
 	email = jkrox@protonmail.com
 	name = Jkrox
+[core]
+	editor = nvim
