@@ -39,7 +39,7 @@
     context
     # newline               # \n
     prompt_char             # prompt symbol
-    virtualenv		    # python venv
+    # virtualenv	    # python venv
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -53,7 +53,7 @@
     # background_jobs         # presence of background jobs
     # direnv                  # direnv status (https://direnv.net/)
     # asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
-    # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
+     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     # anaconda                # conda environment (https://conda.io/)
     # pyenv                   # python environment (https://github.com/pyenv/pyenv)
     # goenv                   # go environment (https://github.com/syndbg/goenv)
@@ -937,7 +937,9 @@
   # Separate environment name from Python version only with a space.
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
   # Custom icon.
-  # typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION=''
+  # Don't show environment name
+  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_NAME=false
 
   #####################[ anaconda: conda environment (https://conda.io/) ]######################
   # Anaconda environment color.
