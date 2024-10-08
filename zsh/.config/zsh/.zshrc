@@ -187,7 +187,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
   
 function extractPorts(){
   ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-  ip_address="cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1"
+  ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
   echo -e "\n[*] Extracting information..\n" > extractPorts.tmp
   echo -e "\t[*] IP Address: $ip_address" >> extractPorts.tmp
   echo -e "\t[*] Open Ports: $ports\n" >> extractPorts.tmp
