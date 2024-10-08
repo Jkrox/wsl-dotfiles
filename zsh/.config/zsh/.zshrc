@@ -184,3 +184,19 @@ alias python="python3"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+  
+function extractPorts(){
+  ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+  ip_address="cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1"
+  echo -e "\n[*] Extracting information..\n" > extractPorts.tmp
+  echo -e "\t[*] IP Address: $ip_address" >> extractPorts.tmp
+  echo -e "\t[*] Open Ports: $ports\n" >> extractPorts.tmp
+  echo $ports | tr -d '\n' | xclip -sel clip
+  echo -e "[*] Ports copied to clipboard\n" >> extractPorts.tmp
+  bat extractPorts.tmp
+  rm extractPorts.tmp
+}
+
+function mkt(){
+  mkdir {nmap,content,scripts}
+}
