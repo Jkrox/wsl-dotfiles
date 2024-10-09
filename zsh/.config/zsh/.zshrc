@@ -25,7 +25,7 @@ source "$ZDOTDIR"plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source "$ZDOTDIR"plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source "$ZDOTDIR"plugins/zsh-you-should-use/you-should-use.plugin.zsh
 export PATH="$PATH:/opt/nvim/"
-export PATH="$PATH:/home/jkrox/.local/globalpyenv/bin/:/home/jkrox/.local/.cargo/bin"
+export PATH="$PATH:/home/jkrox/.local/globalpyenv/bin/"
 
 # ------------------------------------------------------------------------
 
@@ -200,3 +200,4 @@ function extractPorts(){
 function mkt(){
   mkdir {nmap,content,scripts}
 }
+export PATH=$HOME/.local/bin:$PATH
